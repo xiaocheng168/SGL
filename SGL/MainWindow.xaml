@@ -3,10 +3,59 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SGL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="SGenshinLaucher" Height="450" Width="800"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:pages="clr-namespace:SGL.Pages"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize">
+    <Grid
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center">
+
+        <!-- 导航栏 -->
+        <ui:NavigationView
+            Width="800"
+            Height="450">
+            <!-- 菜单列表 -->
+            <ui:NavigationView.MenuItems>
+                <!-- 菜单内容 -->
+
+                <ui:NavigationViewItem
+                    TargetPageType="{x:Type pages:Home}"
+                    Content="主页"
+                    Name="Home">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Home12"></ui:SymbolIcon>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+
+                <ui:NavigationViewItem
+                    Content="游戏列表"
+                    TargetPageType="{x:Type pages:Game}">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Games28"></ui:SymbolIcon>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+                <ui:NavigationViewItem
+                    Content="脚本设置"
+                    TargetPageType="{x:Type pages:Script}">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="KeyboardMouse16"></ui:SymbolIcon>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+                <ui:NavigationViewItem
+                    Content="关于项目"
+                    TargetPageType="{x:Type pages:About}">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Settings24"></ui:SymbolIcon>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+            </ui:NavigationView.MenuItems>
+        </ui:NavigationView>
 
     </Grid>
 </Window>
